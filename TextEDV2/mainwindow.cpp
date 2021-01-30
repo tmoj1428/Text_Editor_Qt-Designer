@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "font.h"
+#include "ui_font.h"
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
@@ -123,16 +125,18 @@ void MainWindow::on_actionOpen_triggered()
         messageBox.setFixedSize(500,200);
     }
     // open file in new window
-    on_actionNew_Window_triggered();
     QFileInfo fname(files);
     fileName = fname.fileName();
+    QString baseName = fname.baseName();
     fileDirectory = fname.path();
     pFileName = fileDirectory + '/' + fileName;
     QTextStream in(&file);
     // code it in utf-8 to represent persian
     in.setCodec("utf-8");
+    QWidget::setWindowTitle(baseName);
     QString allText = in.readAll();
     ui->textEdit->setText(allText);
+    on_actionNew_Window_triggered();
 }
 
 void MainWindow::on_actionSave_triggered()
@@ -141,10 +145,12 @@ void MainWindow::on_actionSave_triggered()
         on_actionSave_as_triggered();
     }else{
         QFile f(pFileName);
+        QFileInfo ff(fileName);
         if (f.open(QIODevice::WriteOnly)) {
             QTextStream out{&f};
             out.setCodec("utf-8");
             out << ui->textEdit->toHtml();
+            QWidget::setWindowTitle(ff.baseName());
             f.close();
         }else{
             QMessageBox messageBox;
@@ -166,5 +172,14 @@ void MainWindow::on_actionSave_as_triggered()
         out.setCodec("utf-8");
         out << ui->textEdit->toHtml();
     }
+    QWidget::setWindowTitle(ff.baseName());
     f.close();
+}
+
+void MainWindow::on_actionFont_triggered()
+{
+    QDialog fontWindow;
+    Ui::font uii;
+    uii.setupUi(&fontWindow);
+    fontWindow.exec();
 }
