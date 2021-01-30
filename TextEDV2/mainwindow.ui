@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>791</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="leftAlignmentButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="justifyAlignmentButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png</iconset>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="rightAlignmentButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boldButton">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="italicButton">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="normalButton">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>0</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Normal.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Normal.png</iconset>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="colorComboBox">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Black</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Orange</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Red</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Blue</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Green</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yellow</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png</iconset>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="sizeComboBox">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>80</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Size</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>10</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>12</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>14</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>16</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>18</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>24</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>32</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>48</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>72</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QFontComboBox" name="fontComboBox">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>80</y>
+       <width>241</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="clearButton">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>90</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>-7</x>
+      <y>153</y>
+      <width>811</width>
+      <height>571</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHello">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Window"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionFont"/>
+   </widget>
+   <addaction name="menuHello"/>
+   <addaction name="menuFormat"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_Window">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/new.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/open.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/save.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/saveas.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/saveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/quit.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
