@@ -222,7 +222,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "new window", nullptr));
         actionNew_Window->setText(QCoreApplication::translate("MainWindow", "New Window", nullptr));
 #if QT_CONFIG(shortcut)
         actionNew_Window->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Shift+N", nullptr));
