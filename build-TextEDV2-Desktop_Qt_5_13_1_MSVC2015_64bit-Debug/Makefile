@@ -265,6 +265,7 @@ Makefile: ..\TextEDV2\TextEDV2.pro ..\..\..\QT\5.13.1\msvc2015_64\mkspecs\win32-
 		..\TextEDV2\TextEDV2.pro \
 		..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Widgets.prl \
 		..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Gui.prl \
+		..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Sql.prl \
 		..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Core.prl \
 		..\..\..\QT\5.13.1\msvc2015_64\lib\qtmain.prl
 	$(QMAKE) -o Makefile ..\TextEDV2\TextEDV2.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -456,6 +457,7 @@ Makefile: ..\TextEDV2\TextEDV2.pro ..\..\..\QT\5.13.1\msvc2015_64\mkspecs\win32-
 ..\TextEDV2\TextEDV2.pro:
 ..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Widgets.prl:
 ..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Gui.prl:
+..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Sql.prl:
 ..\..\..\QT\5.13.1\msvc2015_64\lib\Qt5Core.prl:
 ..\..\..\QT\5.13.1\msvc2015_64\lib\qtmain.prl:
 qmake: FORCE
