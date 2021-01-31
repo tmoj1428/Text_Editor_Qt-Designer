@@ -5,19 +5,21 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QDebug>
+#include <QtSql>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    createDB();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_clearButton_clicked()
 {
@@ -182,4 +184,78 @@ void MainWindow::on_actionFont_triggered()
     Ui::font uii;
     uii.setupUi(&fontWindow);
     fontWindow.exec();
+}
+
+
+void MainWindow::addValues(int id, QString text)
+{
+    if(!dataBase.open()){
+        qDebug()<<"problem opening database";
+    }
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO testtable ("
+                "ID,"
+                "TEXT)"
+                "VALUES (:ID, :TEXT)");
+
+    qry.addBindValue(id);
+    qry.addBindValue(text);
+
+    if(!qry.exec())
+    {
+        qDebug()<<"error adding values to db";
+    }
+    ID++;
+    dataBase.close();
+}
+
+void MainWindow::createDB(){
+
+    qDebug()<<"start";
+    dataBase = QSqlDatabase::addDatabase("QSQLITE");
+    dataBase.setDatabaseName("D:/db.sqlite");
+
+    if(!dataBase.open()){
+        qDebug()<<"problem opening database";
+    }
+
+    QString query = "CREATE TABLE testtable ( "
+                    "ID INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    "TEXT VARCHAR);";
+
+    QSqlQuery qry;
+
+    if (!qry.exec(query)){
+        qDebug()<<"error creating table";
+    }
+
+    qDebug()<<"end";
+    dataBase.close();
+}
+
+void MainWindow::on_actionStore_in_DB_triggered()
+{
+    QTextCursor cursor = ui->textEdit->textCursor();
+    if(cursor.hasSelection())
+    {
+        addValues(ID , cursor.selectedText());
+    }
+}
+
+
+void MainWindow::on_actionClear_DB_triggered()
+{
+    QSqlQuery query(dataBase);
+    if(dataBase.open()){
+        query.prepare("Delete from testtable");
+        if(!query.exec()){
+            qDebug() << "deletion failed";
+        }
+
+        query.clear();
+        query.prepare("DELETE FROM SQLITE_SEQUENCE WHERE name='testtable'");
+        if(!query.exec() ){
+            qDebug() << "deletion failed";
+        }
+    }
 }

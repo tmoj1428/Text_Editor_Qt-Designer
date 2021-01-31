@@ -34,6 +34,8 @@ public:
     QAction *actionSave_as;
     QAction *actionExit;
     QAction *actionFont;
+    QAction *actionStore_in_DB;
+    QAction *actionClear_DB;
     QWidget *centralwidget;
     QWidget *widget;
     QPushButton *leftAlignmentButton;
@@ -86,6 +88,10 @@ public:
         actionExit->setIcon(icon4);
         actionFont = new QAction(MainWindow);
         actionFont->setObjectName(QString::fromUtf8("actionFont"));
+        actionStore_in_DB = new QAction(MainWindow);
+        actionStore_in_DB->setObjectName(QString::fromUtf8("actionStore_in_DB"));
+        actionClear_DB = new QAction(MainWindow);
+        actionClear_DB->setObjectName(QString::fromUtf8("actionClear_DB"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         widget = new QWidget(centralwidget);
@@ -214,6 +220,8 @@ public:
         menuHello->addSeparator();
         menuHello->addAction(actionExit);
         menuFormat->addAction(actionFont);
+        menuFormat->addAction(actionStore_in_DB);
+        menuFormat->addAction(actionClear_DB);
 
         retranslateUi(MainWindow);
 
@@ -244,6 +252,8 @@ public:
         actionExit->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Q", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionFont->setText(QCoreApplication::translate("MainWindow", "Font...", nullptr));
+        actionStore_in_DB->setText(QCoreApplication::translate("MainWindow", "Store in DB", nullptr));
+        actionClear_DB->setText(QCoreApplication::translate("MainWindow", "Clear DB", nullptr));
         leftAlignmentButton->setText(QString());
         justifyAlignmentButton->setText(QString());
         rightAlignmentButton->setText(QString());

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +16,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString fileName, pFileName, fileDirectory;
+    int ID;
+    QSqlDatabase dataBase;
 
 private slots:
     void on_clearButton_clicked();
@@ -49,6 +52,14 @@ private slots:
     void on_actionSave_as_triggered();
 
     void on_actionFont_triggered();
+
+    void on_actionStore_in_DB_triggered();
+
+    void createDB();
+
+    void addValues(int id, QString text);
+
+    void on_actionClear_DB_triggered();
 
 private:
     Ui::MainWindow *ui;

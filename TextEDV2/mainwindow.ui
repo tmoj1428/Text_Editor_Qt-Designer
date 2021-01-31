@@ -378,6 +378,8 @@
      <string>Format</string>
     </property>
     <addaction name="actionFont"/>
+    <addaction name="actionStore_in_DB"/>
+    <addaction name="actionClear_DB"/>
    </widget>
    <addaction name="menuHello"/>
    <addaction name="menuFormat"/>
@@ -446,6 +448,16 @@
   <action name="actionFont">
    <property name="text">
     <string>Font...</string>
+   </property>
+  </action>
+  <action name="actionStore_in_DB">
+   <property name="text">
+    <string>Store in DB</string>
+   </property>
+  </action>
+  <action name="actionClear_DB">
+   <property name="text">
+    <string>Clear DB</string>
    </property>
   </action>
  </widget>
