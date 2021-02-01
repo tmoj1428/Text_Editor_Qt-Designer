@@ -15,6 +15,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFontComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -34,22 +35,27 @@ public:
     QAction *actionSave_as;
     QAction *actionExit;
     QAction *actionFont;
+    QAction *actionStore_in_DB;
+    QAction *actionClear_DB;
+    QAction *actionClear_DB3;
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
     QWidget *widget;
-    QPushButton *leftAlignmentButton;
-    QPushButton *justifyAlignmentButton;
+    QGridLayout *gridLayout_2;
     QPushButton *rightAlignmentButton;
-    QPushButton *boldButton;
-    QPushButton *italicButton;
-    QPushButton *normalButton;
     QComboBox *colorComboBox;
-    QComboBox *sizeComboBox;
     QFontComboBox *fontComboBox;
+    QComboBox *sizeComboBox;
+    QPushButton *leftAlignmentButton;
+    QPushButton *underlineButton;
+    QPushButton *italicButton;
     QPushButton *clearButton;
+    QPushButton *boldButton;
+    QPushButton *justifyAlignmentButton;
     QTextEdit *textEdit;
     QMenuBar *menubar;
     QMenu *menuHello;
-    QMenu *menuFormat;
+    QMenu *menuData_base;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -86,85 +92,60 @@ public:
         actionExit->setIcon(icon4);
         actionFont = new QAction(MainWindow);
         actionFont->setObjectName(QString::fromUtf8("actionFont"));
+        actionStore_in_DB = new QAction(MainWindow);
+        actionStore_in_DB->setObjectName(QString::fromUtf8("actionStore_in_DB"));
+        actionClear_DB = new QAction(MainWindow);
+        actionClear_DB->setObjectName(QString::fromUtf8("actionClear_DB"));
+        actionClear_DB3 = new QAction(MainWindow);
+        actionClear_DB3->setObjectName(QString::fromUtf8("actionClear_DB3"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(0, 0, 791, 151));
-        leftAlignmentButton = new QPushButton(widget);
-        leftAlignmentButton->setObjectName(QString::fromUtf8("leftAlignmentButton"));
-        leftAlignmentButton->setGeometry(QRect(30, 0, 111, 41));
-        leftAlignmentButton->setCursor(QCursor(Qt::PointingHandCursor));
-        leftAlignmentButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png"), QSize(), QIcon::Normal, QIcon::Off);
-        leftAlignmentButton->setIcon(icon5);
-        leftAlignmentButton->setCheckable(true);
-        justifyAlignmentButton = new QPushButton(widget);
-        justifyAlignmentButton->setObjectName(QString::fromUtf8("justifyAlignmentButton"));
-        justifyAlignmentButton->setGeometry(QRect(140, 0, 111, 41));
-        justifyAlignmentButton->setCursor(QCursor(Qt::PointingHandCursor));
-        justifyAlignmentButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png"), QSize(), QIcon::Normal, QIcon::Off);
-        justifyAlignmentButton->setIcon(icon6);
-        justifyAlignmentButton->setCheckable(true);
-        justifyAlignmentButton->setChecked(false);
-        justifyAlignmentButton->setAutoRepeat(false);
+        gridLayout_2 = new QGridLayout(widget);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         rightAlignmentButton = new QPushButton(widget);
         rightAlignmentButton->setObjectName(QString::fromUtf8("rightAlignmentButton"));
-        rightAlignmentButton->setGeometry(QRect(250, 0, 111, 41));
         rightAlignmentButton->setCursor(QCursor(Qt::PointingHandCursor));
         rightAlignmentButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png"), QSize(), QIcon::Normal, QIcon::Off);
-        rightAlignmentButton->setIcon(icon7);
-        boldButton = new QPushButton(widget);
-        boldButton->setObjectName(QString::fromUtf8("boldButton"));
-        boldButton->setGeometry(QRect(430, 0, 111, 41));
-        boldButton->setCursor(QCursor(Qt::PointingHandCursor));
-        boldButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png"), QSize(), QIcon::Normal, QIcon::Off);
-        boldButton->setIcon(icon8);
-        italicButton = new QPushButton(widget);
-        italicButton->setObjectName(QString::fromUtf8("italicButton"));
-        italicButton->setGeometry(QRect(540, 0, 111, 41));
-        italicButton->setCursor(QCursor(Qt::PointingHandCursor));
-        italicButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png"), QSize(), QIcon::Normal, QIcon::Off);
-        italicButton->setIcon(icon9);
-        normalButton = new QPushButton(widget);
-        normalButton->setObjectName(QString::fromUtf8("normalButton"));
-        normalButton->setGeometry(QRect(650, 0, 111, 41));
-        normalButton->setCursor(QCursor(Qt::PointingHandCursor));
-        normalButton->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Normal.png"), QSize(), QIcon::Normal, QIcon::Off);
-        normalButton->setIcon(icon10);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        rightAlignmentButton->setIcon(icon5);
+        rightAlignmentButton->setCheckable(true);
+
+        gridLayout_2->addWidget(rightAlignmentButton, 0, 2, 1, 1);
+
         colorComboBox = new QComboBox(widget);
         colorComboBox->addItem(QString());
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png"), QSize(), QIcon::Normal, QIcon::Off);
+        colorComboBox->addItem(icon6, QString());
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png"), QSize(), QIcon::Normal, QIcon::Off);
+        colorComboBox->addItem(icon7, QString());
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png"), QSize(), QIcon::Normal, QIcon::Off);
+        colorComboBox->addItem(icon8, QString());
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png"), QSize(), QIcon::Normal, QIcon::Off);
+        colorComboBox->addItem(icon9, QString());
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png"), QSize(), QIcon::Normal, QIcon::Off);
+        colorComboBox->addItem(icon10, QString());
         QIcon icon11;
-        icon11.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon11.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png"), QSize(), QIcon::Normal, QIcon::Off);
         colorComboBox->addItem(icon11, QString());
-        QIcon icon12;
-        icon12.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png"), QSize(), QIcon::Normal, QIcon::Off);
-        colorComboBox->addItem(icon12, QString());
-        QIcon icon13;
-        icon13.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png"), QSize(), QIcon::Normal, QIcon::Off);
-        colorComboBox->addItem(icon13, QString());
-        QIcon icon14;
-        icon14.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png"), QSize(), QIcon::Normal, QIcon::Off);
-        colorComboBox->addItem(icon14, QString());
-        QIcon icon15;
-        icon15.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png"), QSize(), QIcon::Normal, QIcon::Off);
-        colorComboBox->addItem(icon15, QString());
-        QIcon icon16;
-        icon16.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png"), QSize(), QIcon::Normal, QIcon::Off);
-        colorComboBox->addItem(icon16, QString());
         colorComboBox->setObjectName(QString::fromUtf8("colorComboBox"));
-        colorComboBox->setGeometry(QRect(30, 80, 161, 61));
+
+        gridLayout_2->addWidget(colorComboBox, 1, 0, 1, 2);
+
+        fontComboBox = new QFontComboBox(widget);
+        fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
+
+        gridLayout_2->addWidget(fontComboBox, 1, 4, 1, 2);
+
         sizeComboBox = new QComboBox(widget);
         sizeComboBox->addItem(QString());
         sizeComboBox->addItem(QString());
@@ -176,44 +157,120 @@ public:
         sizeComboBox->addItem(QString());
         sizeComboBox->addItem(QString());
         sizeComboBox->addItem(QString());
+        sizeComboBox->addItem(QString());
         sizeComboBox->setObjectName(QString::fromUtf8("sizeComboBox"));
-        sizeComboBox->setGeometry(QRect(200, 80, 161, 61));
-        fontComboBox = new QFontComboBox(widget);
-        fontComboBox->setObjectName(QString::fromUtf8("fontComboBox"));
-        fontComboBox->setGeometry(QRect(370, 80, 241, 61));
+
+        gridLayout_2->addWidget(sizeComboBox, 1, 2, 1, 2);
+
+        leftAlignmentButton = new QPushButton(widget);
+        leftAlignmentButton->setObjectName(QString::fromUtf8("leftAlignmentButton"));
+        leftAlignmentButton->setCursor(QCursor(Qt::PointingHandCursor));
+        leftAlignmentButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png"), QSize(), QIcon::Normal, QIcon::Off);
+        leftAlignmentButton->setIcon(icon12);
+        leftAlignmentButton->setCheckable(true);
+
+        gridLayout_2->addWidget(leftAlignmentButton, 0, 0, 1, 1);
+
+        underlineButton = new QPushButton(widget);
+        underlineButton->setObjectName(QString::fromUtf8("underlineButton"));
+        underlineButton->setCursor(QCursor(Qt::PointingHandCursor));
+        underlineButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon13;
+        icon13.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/underline.png"), QSize(), QIcon::Normal, QIcon::Off);
+        underlineButton->setIcon(icon13);
+        underlineButton->setCheckable(true);
+
+        gridLayout_2->addWidget(underlineButton, 0, 6, 1, 1);
+
+        italicButton = new QPushButton(widget);
+        italicButton->setObjectName(QString::fromUtf8("italicButton"));
+        italicButton->setCursor(QCursor(Qt::PointingHandCursor));
+        italicButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon14;
+        icon14.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png"), QSize(), QIcon::Normal, QIcon::Off);
+        italicButton->setIcon(icon14);
+        italicButton->setCheckable(true);
+
+        gridLayout_2->addWidget(italicButton, 0, 5, 1, 1);
+
         clearButton = new QPushButton(widget);
         clearButton->setObjectName(QString::fromUtf8("clearButton"));
-        clearButton->setGeometry(QRect(650, 90, 111, 41));
         clearButton->setCursor(QCursor(Qt::PointingHandCursor));
         clearButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon15;
+        icon15.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
+        clearButton->setIcon(icon15);
+
+        gridLayout_2->addWidget(clearButton, 1, 6, 1, 1);
+
+        boldButton = new QPushButton(widget);
+        boldButton->setObjectName(QString::fromUtf8("boldButton"));
+        boldButton->setCursor(QCursor(Qt::PointingHandCursor));
+        boldButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon16;
+        icon16.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png"), QSize(), QIcon::Normal, QIcon::Off);
+        boldButton->setIcon(icon16);
+        boldButton->setCheckable(true);
+
+        gridLayout_2->addWidget(boldButton, 0, 4, 1, 1);
+
+        justifyAlignmentButton = new QPushButton(widget);
+        justifyAlignmentButton->setObjectName(QString::fromUtf8("justifyAlignmentButton"));
+        justifyAlignmentButton->setCursor(QCursor(Qt::PointingHandCursor));
+        justifyAlignmentButton->setStyleSheet(QString::fromUtf8(""));
         QIcon icon17;
-        icon17.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        clearButton->setIcon(icon17);
-        textEdit = new QTextEdit(centralwidget);
+        icon17.addFile(QString::fromUtf8("../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png"), QSize(), QIcon::Normal, QIcon::Off);
+        justifyAlignmentButton->setIcon(icon17);
+        justifyAlignmentButton->setCheckable(true);
+        justifyAlignmentButton->setChecked(false);
+        justifyAlignmentButton->setAutoRepeat(false);
+
+        gridLayout_2->addWidget(justifyAlignmentButton, 0, 1, 1, 1);
+
+        textEdit = new QTextEdit(widget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(-7, 153, 811, 571));
+
+        gridLayout_2->addWidget(textEdit, 2, 0, 1, 7);
+
+        textEdit->raise();
+        leftAlignmentButton->raise();
+        justifyAlignmentButton->raise();
+        boldButton->raise();
+        italicButton->raise();
+        underlineButton->raise();
+        colorComboBox->raise();
+        sizeComboBox->raise();
+        fontComboBox->raise();
+        clearButton->raise();
+        rightAlignmentButton->raise();
+
+        gridLayout->addWidget(widget, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 19));
         menuHello = new QMenu(menubar);
         menuHello->setObjectName(QString::fromUtf8("menuHello"));
-        menuFormat = new QMenu(menubar);
-        menuFormat->setObjectName(QString::fromUtf8("menuFormat"));
+        menuData_base = new QMenu(menubar);
+        menuData_base->setObjectName(QString::fromUtf8("menuData_base"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menuHello->menuAction());
-        menubar->addAction(menuFormat->menuAction());
+        menubar->addAction(menuData_base->menuAction());
         menuHello->addAction(actionNew_Window);
         menuHello->addAction(actionOpen);
         menuHello->addAction(actionSave);
         menuHello->addAction(actionSave_as);
         menuHello->addSeparator();
         menuHello->addAction(actionExit);
-        menuFormat->addAction(actionFont);
+        menuData_base->addAction(actionStore_in_DB);
+        menuData_base->addAction(actionClear_DB);
 
         retranslateUi(MainWindow);
 
@@ -222,7 +279,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "new window", nullptr));
         actionNew_Window->setText(QCoreApplication::translate("MainWindow", "New Window", nullptr));
 #if QT_CONFIG(shortcut)
         actionNew_Window->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Shift+N", nullptr));
@@ -244,12 +301,10 @@ public:
         actionExit->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Q", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionFont->setText(QCoreApplication::translate("MainWindow", "Font...", nullptr));
-        leftAlignmentButton->setText(QString());
-        justifyAlignmentButton->setText(QString());
+        actionStore_in_DB->setText(QCoreApplication::translate("MainWindow", "Store in DB", nullptr));
+        actionClear_DB->setText(QCoreApplication::translate("MainWindow", "Clear DB", nullptr));
+        actionClear_DB3->setText(QCoreApplication::translate("MainWindow", "Clear DB", nullptr));
         rightAlignmentButton->setText(QString());
-        boldButton->setText(QString());
-        italicButton->setText(QString());
-        normalButton->setText(QString());
         colorComboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Color", nullptr));
         colorComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Black", nullptr));
         colorComboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Orange", nullptr));
@@ -259,19 +314,25 @@ public:
         colorComboBox->setItemText(6, QCoreApplication::translate("MainWindow", "Yellow", nullptr));
 
         sizeComboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Size", nullptr));
-        sizeComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "10", nullptr));
-        sizeComboBox->setItemText(2, QCoreApplication::translate("MainWindow", "12", nullptr));
-        sizeComboBox->setItemText(3, QCoreApplication::translate("MainWindow", "14", nullptr));
-        sizeComboBox->setItemText(4, QCoreApplication::translate("MainWindow", "16", nullptr));
-        sizeComboBox->setItemText(5, QCoreApplication::translate("MainWindow", "18", nullptr));
-        sizeComboBox->setItemText(6, QCoreApplication::translate("MainWindow", "24", nullptr));
-        sizeComboBox->setItemText(7, QCoreApplication::translate("MainWindow", "32", nullptr));
-        sizeComboBox->setItemText(8, QCoreApplication::translate("MainWindow", "48", nullptr));
-        sizeComboBox->setItemText(9, QCoreApplication::translate("MainWindow", "72", nullptr));
+        sizeComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "8", nullptr));
+        sizeComboBox->setItemText(2, QCoreApplication::translate("MainWindow", "10", nullptr));
+        sizeComboBox->setItemText(3, QCoreApplication::translate("MainWindow", "12", nullptr));
+        sizeComboBox->setItemText(4, QCoreApplication::translate("MainWindow", "14", nullptr));
+        sizeComboBox->setItemText(5, QCoreApplication::translate("MainWindow", "16", nullptr));
+        sizeComboBox->setItemText(6, QCoreApplication::translate("MainWindow", "18", nullptr));
+        sizeComboBox->setItemText(7, QCoreApplication::translate("MainWindow", "24", nullptr));
+        sizeComboBox->setItemText(8, QCoreApplication::translate("MainWindow", "32", nullptr));
+        sizeComboBox->setItemText(9, QCoreApplication::translate("MainWindow", "48", nullptr));
+        sizeComboBox->setItemText(10, QCoreApplication::translate("MainWindow", "72", nullptr));
 
+        leftAlignmentButton->setText(QString());
+        underlineButton->setText(QString());
+        italicButton->setText(QString());
         clearButton->setText(QString());
+        boldButton->setText(QString());
+        justifyAlignmentButton->setText(QString());
         menuHello->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
-        menuFormat->setTitle(QCoreApplication::translate("MainWindow", "Format", nullptr));
+        menuData_base->setTitle(QCoreApplication::translate("MainWindow", "Data base", nullptr));
     } // retranslateUi
 
 };

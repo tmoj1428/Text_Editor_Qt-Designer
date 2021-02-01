@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QTextCharFormat>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +17,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString fileName, pFileName, fileDirectory;
+    int ID;
+    QPixmap bkgnd;
+    QSqlDatabase dataBase;
 
 private slots:
     void on_clearButton_clicked();
@@ -36,7 +41,7 @@ private slots:
 
     void on_italicButton_clicked();
 
-    void on_normalButton_clicked();
+    void on_underlineButton_clicked();
 
     void on_actionExit_triggered();
 
@@ -48,7 +53,18 @@ private slots:
 
     void on_actionSave_as_triggered();
 
+    void on_actionStore_in_DB_triggered();
+
+    void createDB();
+
+    void addValues(int id, QString text);
+
+    void on_actionClear_DB_triggered();
+
+    void on_textEdit_currentCharFormatChanged(const QTextCharFormat &format);
+
 private:
     Ui::MainWindow *ui;
+    void resizeEvent(QResizeEvent *evt);
 };
 #endif // MAINWINDOW_H
