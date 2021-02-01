@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[25];
-    char stringdata0[552];
+    QByteArrayData data[27];
+    char stringdata0[591];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,19 +44,21 @@ QT_MOC_LITERAL(8, 173, 34), // "on_sizeComboBox_currentTextCh..."
 QT_MOC_LITERAL(9, 208, 34), // "on_fontComboBox_currentTextCh..."
 QT_MOC_LITERAL(10, 243, 21), // "on_boldButton_clicked"
 QT_MOC_LITERAL(11, 265, 23), // "on_italicButton_clicked"
-QT_MOC_LITERAL(12, 289, 23), // "on_normalButton_clicked"
-QT_MOC_LITERAL(13, 313, 23), // "on_actionExit_triggered"
-QT_MOC_LITERAL(14, 337, 29), // "on_actionNew_Window_triggered"
-QT_MOC_LITERAL(15, 367, 23), // "on_actionOpen_triggered"
-QT_MOC_LITERAL(16, 391, 23), // "on_actionSave_triggered"
-QT_MOC_LITERAL(17, 415, 26), // "on_actionSave_as_triggered"
-QT_MOC_LITERAL(18, 442, 23), // "on_actionFont_triggered"
-QT_MOC_LITERAL(19, 466, 30), // "on_actionStore_in_DB_triggered"
-QT_MOC_LITERAL(20, 497, 8), // "createDB"
-QT_MOC_LITERAL(21, 506, 9), // "addValues"
-QT_MOC_LITERAL(22, 516, 2), // "id"
-QT_MOC_LITERAL(23, 519, 4), // "text"
-QT_MOC_LITERAL(24, 524, 27) // "on_actionClear_DB_triggered"
+QT_MOC_LITERAL(12, 289, 26), // "on_underlineButton_clicked"
+QT_MOC_LITERAL(13, 316, 23), // "on_actionExit_triggered"
+QT_MOC_LITERAL(14, 340, 29), // "on_actionNew_Window_triggered"
+QT_MOC_LITERAL(15, 370, 23), // "on_actionOpen_triggered"
+QT_MOC_LITERAL(16, 394, 23), // "on_actionSave_triggered"
+QT_MOC_LITERAL(17, 418, 26), // "on_actionSave_as_triggered"
+QT_MOC_LITERAL(18, 445, 30), // "on_actionStore_in_DB_triggered"
+QT_MOC_LITERAL(19, 476, 8), // "createDB"
+QT_MOC_LITERAL(20, 485, 9), // "addValues"
+QT_MOC_LITERAL(21, 495, 2), // "id"
+QT_MOC_LITERAL(22, 498, 4), // "text"
+QT_MOC_LITERAL(23, 503, 27), // "on_actionClear_DB_triggered"
+QT_MOC_LITERAL(24, 531, 36), // "on_textEdit_currentCharFormat..."
+QT_MOC_LITERAL(25, 568, 15), // "QTextCharFormat"
+QT_MOC_LITERAL(26, 584, 6) // "format"
 
     },
     "MainWindow\0on_clearButton_clicked\0\0"
@@ -67,13 +69,15 @@ QT_MOC_LITERAL(24, 524, 27) // "on_actionClear_DB_triggered"
     "arg1\0on_sizeComboBox_currentTextChanged\0"
     "on_fontComboBox_currentTextChanged\0"
     "on_boldButton_clicked\0on_italicButton_clicked\0"
-    "on_normalButton_clicked\0on_actionExit_triggered\0"
+    "on_underlineButton_clicked\0"
+    "on_actionExit_triggered\0"
     "on_actionNew_Window_triggered\0"
     "on_actionOpen_triggered\0on_actionSave_triggered\0"
     "on_actionSave_as_triggered\0"
-    "on_actionFont_triggered\0"
     "on_actionStore_in_DB_triggered\0createDB\0"
-    "addValues\0id\0text\0on_actionClear_DB_triggered"
+    "addValues\0id\0text\0on_actionClear_DB_triggered\0"
+    "on_textEdit_currentCharFormatChanged\0"
+    "QTextCharFormat\0format"
 };
 #undef QT_MOC_LITERAL
 
@@ -108,9 +112,9 @@ static const uint qt_meta_data_MainWindow[] = {
       17,    0,  134,    2, 0x08 /* Private */,
       18,    0,  135,    2, 0x08 /* Private */,
       19,    0,  136,    2, 0x08 /* Private */,
-      20,    0,  137,    2, 0x08 /* Private */,
-      21,    2,  138,    2, 0x08 /* Private */,
-      24,    0,  143,    2, 0x08 /* Private */,
+      20,    2,  137,    2, 0x08 /* Private */,
+      23,    0,  142,    2, 0x08 /* Private */,
+      24,    1,  143,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -130,9 +134,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   21,   22,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   22,   23,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 25,   26,
 
        0        // eod
 };
@@ -152,17 +156,17 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_fontComboBox_currentTextChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 7: _t->on_boldButton_clicked(); break;
         case 8: _t->on_italicButton_clicked(); break;
-        case 9: _t->on_normalButton_clicked(); break;
+        case 9: _t->on_underlineButton_clicked(); break;
         case 10: _t->on_actionExit_triggered(); break;
         case 11: _t->on_actionNew_Window_triggered(); break;
         case 12: _t->on_actionOpen_triggered(); break;
         case 13: _t->on_actionSave_triggered(); break;
         case 14: _t->on_actionSave_as_triggered(); break;
-        case 15: _t->on_actionFont_triggered(); break;
-        case 16: _t->on_actionStore_in_DB_triggered(); break;
-        case 17: _t->createDB(); break;
-        case 18: _t->addValues((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 19: _t->on_actionClear_DB_triggered(); break;
+        case 15: _t->on_actionStore_in_DB_triggered(); break;
+        case 16: _t->createDB(); break;
+        case 17: _t->addValues((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 18: _t->on_actionClear_DB_triggered(); break;
+        case 19: _t->on_textEdit_currentCharFormatChanged((*reinterpret_cast< const QTextCharFormat(*)>(_a[1]))); break;
         default: ;
         }
     }

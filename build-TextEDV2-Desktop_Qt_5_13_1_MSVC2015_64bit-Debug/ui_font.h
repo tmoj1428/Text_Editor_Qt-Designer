@@ -13,45 +13,36 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_font
 {
 public:
-    QDialogButtonBox *buttonBox;
-    QWidget *horizontalLayoutWidget;
+    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_2;
     QListWidget *listWidget;
-    QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_3;
     QListWidget *listWidget_2;
-    QWidget *horizontalLayoutWidget_3;
     QHBoxLayout *horizontalLayout_4;
     QListWidget *listWidget_3;
     QLineEdit *lineEdit;
+    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *font)
     {
         if (font->objectName().isEmpty())
             font->setObjectName(QString::fromUtf8("font"));
         font->resize(400, 300);
-        buttonBox = new QDialogButtonBox(font);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(30, 240, 341, 32));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-        horizontalLayoutWidget = new QWidget(font);
-        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(0, 20, 91, 151));
-        horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
+        gridLayout = new QGridLayout(font);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        listWidget = new QListWidget(horizontalLayoutWidget);
+        listWidget = new QListWidget(font);
         new QListWidgetItem(listWidget);
         new QListWidgetItem(listWidget);
         new QListWidgetItem(listWidget);
@@ -65,13 +56,12 @@ public:
 
         horizontalLayout_2->addWidget(listWidget);
 
-        horizontalLayoutWidget_2 = new QWidget(font);
-        horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(100, 19, 101, 151));
-        horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_2);
+
+        gridLayout->addLayout(horizontalLayout_2, 0, 0, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        listWidget_2 = new QListWidget(horizontalLayoutWidget_2);
+        listWidget_2 = new QListWidget(font);
         new QListWidgetItem(listWidget_2);
         new QListWidgetItem(listWidget_2);
         new QListWidgetItem(listWidget_2);
@@ -79,20 +69,31 @@ public:
 
         horizontalLayout_3->addWidget(listWidget_2);
 
-        horizontalLayoutWidget_3 = new QWidget(font);
-        horizontalLayoutWidget_3->setObjectName(QString::fromUtf8("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(210, 20, 161, 151));
-        horizontalLayout_4 = new QHBoxLayout(horizontalLayoutWidget_3);
+
+        gridLayout->addLayout(horizontalLayout_3, 0, 1, 1, 1);
+
+        horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        listWidget_3 = new QListWidget(horizontalLayoutWidget_3);
+        listWidget_3 = new QListWidget(font);
         listWidget_3->setObjectName(QString::fromUtf8("listWidget_3"));
 
         horizontalLayout_4->addWidget(listWidget_3);
 
+
+        gridLayout->addLayout(horizontalLayout_4, 0, 2, 1, 1);
+
         lineEdit = new QLineEdit(font);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(20, 200, 113, 20));
+
+        gridLayout->addWidget(lineEdit, 1, 0, 1, 2);
+
+        buttonBox = new QDialogButtonBox(font);
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+
+        gridLayout->addWidget(buttonBox, 2, 0, 1, 3);
+
 
         retranslateUi(font);
         QObject::connect(buttonBox, SIGNAL(accepted()), font, SLOT(accept()));
