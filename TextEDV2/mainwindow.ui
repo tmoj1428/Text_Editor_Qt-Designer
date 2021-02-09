@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>838</width>
     <height>737</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/right.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/right.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/right.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -57,7 +57,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/black.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/black.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/black.png</iconset>
           </property>
          </item>
          <item>
@@ -66,7 +66,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/orange.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/orange.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/orange.png</iconset>
           </property>
          </item>
          <item>
@@ -75,7 +75,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/red.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/red.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/red.png</iconset>
           </property>
          </item>
          <item>
@@ -84,7 +84,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/blue.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/blue.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/blue.png</iconset>
           </property>
          </item>
          <item>
@@ -93,7 +93,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/green.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/green.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/green.png</iconset>
           </property>
          </item>
          <item>
@@ -102,7 +102,7 @@
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/yellow.png</iconset>
+            <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/yellow.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/yellow.png</iconset>
           </property>
          </item>
         </widget>
@@ -182,7 +182,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/left.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/left.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/left.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -202,7 +202,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/underline.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/underline.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/underline.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/underline.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -222,7 +222,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Italic.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/Italic.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/Italic.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -242,7 +242,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/clear.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/clear.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/clear.png</iconset>
          </property>
         </widget>
        </item>
@@ -259,7 +259,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/Bold.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/Bold.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/Bold.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -279,7 +279,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/justify.png</iconset>
+           <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/justify.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/justify.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -316,8 +316,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>19</height>
+     <width>838</width>
+     <height>39</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHello">
@@ -345,7 +345,7 @@
   <action name="actionNew_Window">
    <property name="icon">
     <iconset>
-     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/new.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/new.png</iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/new.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/new.png</iconset>
    </property>
    <property name="text">
     <string>New Window</string>
@@ -357,7 +357,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset>
-     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/open.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/open.png</iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/open.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/open.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -369,7 +369,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset>
-     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/save.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/save.png</iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/save.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -381,7 +381,7 @@
   <action name="actionSave_as">
    <property name="icon">
     <iconset>
-     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/saveas.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/saveas.png</iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/saveas.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/saveas.png</iconset>
    </property>
    <property name="text">
     <string>Save as</string>
@@ -393,7 +393,7 @@
   <action name="actionExit">
    <property name="icon">
     <iconset>
-     <normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/quit.png</normaloff>../build-TextEDV2-Desktop_Qt_5_13_1_MSVC2015_64bit-Debug/resources/pixmaps/quit.png</iconset>
+     <normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/quit.png</normaloff>../build-TextEDV2-Desktop_Qt_5_15_2_GCC_64bit-Debug/resources/pixmaps/quit.png</iconset>
    </property>
    <property name="text">
     <string>Exit</string>

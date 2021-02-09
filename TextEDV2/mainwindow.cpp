@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QtSql>
+#include <QSqlDatabase>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -213,27 +214,28 @@ void MainWindow::on_actionNew_Window_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString files = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("*.txt"));
+    QString files = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("*.txt", "*.html"));
     QFile file(files);
     // give warning if the file does not exist
     if(!file.open(QIODevice::ReadOnly)) {
         QMessageBox messageBox;
         messageBox.critical(0,"Error","File does not exists!");
         messageBox.setFixedSize(500,200);
+    }else{
+        // open file in new window
+        QFileInfo fname(files);
+        fileName = fname.fileName();
+        QString baseName = fname.baseName();
+        fileDirectory = fname.path();
+        pFileName = fileDirectory + '/' + fileName;
+        QTextStream in(&file);
+        // code it in utf-8 to represent persian
+        in.setCodec("utf-8");
+        QWidget::setWindowTitle(baseName);
+        QString allText = in.readAll();
+        ui->textEdit->setText(allText);
+        on_actionNew_Window_triggered();
     }
-    // open file in new window
-    QFileInfo fname(files);
-    fileName = fname.fileName();
-    QString baseName = fname.baseName();
-    fileDirectory = fname.path();
-    pFileName = fileDirectory + '/' + fileName;
-    QTextStream in(&file);
-    // code it in utf-8 to represent persian
-    in.setCodec("utf-8");
-    QWidget::setWindowTitle(baseName);
-    QString allText = in.readAll();
-    ui->textEdit->setText(allText);
-    on_actionNew_Window_triggered();
 }
 
 void MainWindow::on_actionSave_triggered()
@@ -277,52 +279,51 @@ void MainWindow::on_actionSave_as_triggered()
 
 void MainWindow::addValues(int id, QString text)
 {
-    // check whether we can open the data base or not
-    if(!dataBase.open()){
-        qDebug()<<"problem opening database";
-    }
     QSqlQuery qry;
     // write inserting query
-    qry.prepare("INSERT INTO testtable ("
-                "ID,"
-                "TEXT)"
-                "VALUES (:ID, :TEXT)");
+    qry.prepare("INSERT INTO testtable (ID, TEXT) VALUES (:ID, :TEXT);");
     // bind values to table values
     qry.addBindValue(id);
     qry.addBindValue(text);
 
     if(!qry.exec())
     {
-        qDebug()<<"error adding values to db";
+        qDebug()<<qry.lastError();
     }
     ID++;
-    dataBase.close();
 }
 
 void MainWindow::createDB(){
 
     qDebug()<<"start";
-    dataBase = QSqlDatabase::addDatabase("QSQLITE");
-    dataBase.setDatabaseName("./db.sqlite");
+    dataBase = QSqlDatabase::addDatabase("QMYSQL");
+    dataBase.setHostName("127.0.0.1");
+    dataBase.setUserName("root");
+    dataBase.setPassword("11111111");
 
     if(!dataBase.open()){
-        qDebug()<<"problem opening database";
+        qDebug()<<dataBase.lastError();
+    }
+    //dataBase.setDatabaseName("dbTest");
+
+
+    QSqlQuery qry(dataBase);
+
+    QSqlQuery query("CREATE DATABASE IF NOT EXISTS dbTest");
+    if (!query.exec()){
+        qDebug()<<query.lastError();
     }
 
-    // query for creating table
-    QString query = "CREATE TABLE testtable ( "
-                    "ID INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    "TEXT VARCHAR);";
-    // make a sql qry object
-    QSqlQuery qry;
+    qry.prepare("USE dbTest;"
+                "CREATE TABLE testtable("
+                "ID INTEGER PRIMARY KEY,"
+                "TEXT VARCHAR(100));");
 
-    // if the table does not exists, we create it
-    if (!qry.exec(query)){
-        qDebug()<<"error creating table";
+    if (!qry.exec()){
+        qDebug()<<qry.lastError();
     }
 
     qDebug()<<"end";
-    dataBase.close();
 }
 
 void MainWindow::on_actionStore_in_DB_triggered()
@@ -338,18 +339,10 @@ void MainWindow::on_actionStore_in_DB_triggered()
 
 void MainWindow::on_actionClear_DB_triggered()
 {
-    QSqlQuery query(dataBase);
-    if(dataBase.open()){
-        query.prepare("Delete from testtable");
-        if(!query.exec()){
-            qDebug() << "deletion failed";
-        }
-        // clear all datas in data base table
-        query.clear();
-        query.prepare("DELETE FROM SQLITE_SEQUENCE WHERE name='testtable'");
-        if(!query.exec() ){
-            qDebug() << "deletion failed";
-        }
+    QSqlQuery query;
+    query.prepare("TRUNCATE dbTest.testtable");
+    if(!query.exec()){
+        qDebug() << query.lastError();
     }
 }
 

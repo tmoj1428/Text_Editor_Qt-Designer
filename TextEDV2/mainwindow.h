@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString fileName, pFileName, fileDirectory;
-    int ID;
+    int ID = 1;
     QPixmap bkgnd;
     QSqlDatabase dataBase;
 
@@ -62,6 +62,7 @@ private slots:
     void on_actionClear_DB_triggered();
 
     void on_textEdit_currentCharFormatChanged(const QTextCharFormat &format);
+
 
 private:
     Ui::MainWindow *ui;
