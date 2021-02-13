@@ -214,7 +214,7 @@ void MainWindow::on_actionNew_Window_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString files = QFileDialog::getOpenFileName(this, tr("Open File"), "./", tr("*.txt", "*.html"));
+    QString files = QFileDialog::getOpenFileName(this, tr("Open File"), "/home", tr("*"));
     QFile file(files);
     // give warning if the file does not exist
     if(!file.open(QIODevice::ReadOnly)) {
@@ -316,8 +316,8 @@ void MainWindow::createDB(){
 
     qry.prepare("USE dbTest;"
                 "CREATE TABLE testtable("
-                "ID INTEGER PRIMARY KEY,"
-                "TEXT VARCHAR(100));");
+                "ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+                "TEXT VARCHAR);");
 
     if (!qry.exec()){
         qDebug()<<qry.lastError();

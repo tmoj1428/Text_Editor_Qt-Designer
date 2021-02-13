@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString fileName, pFileName, fileDirectory;
-    int ID = 1;
+    int ID;
     QPixmap bkgnd;
     QSqlDatabase dataBase;
 
