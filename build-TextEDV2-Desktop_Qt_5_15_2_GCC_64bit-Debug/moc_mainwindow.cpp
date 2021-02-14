@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[27];
-    char stringdata0[591];
+    QByteArrayData data[29];
+    char stringdata0[636];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -58,7 +58,9 @@ QT_MOC_LITERAL(22, 498, 4), // "text"
 QT_MOC_LITERAL(23, 503, 27), // "on_actionClear_DB_triggered"
 QT_MOC_LITERAL(24, 531, 36), // "on_textEdit_currentCharFormat..."
 QT_MOC_LITERAL(25, 568, 15), // "QTextCharFormat"
-QT_MOC_LITERAL(26, 584, 6) // "format"
+QT_MOC_LITERAL(26, 584, 6), // "format"
+QT_MOC_LITERAL(27, 591, 11), // "setPassword"
+QT_MOC_LITERAL(28, 603, 32) // "on_actionConnect_to_DB_triggered"
 
     },
     "MainWindow\0on_clearButton_clicked\0\0"
@@ -77,7 +79,8 @@ QT_MOC_LITERAL(26, 584, 6) // "format"
     "on_actionStore_in_DB_triggered\0createDB\0"
     "addValues\0id\0text\0on_actionClear_DB_triggered\0"
     "on_textEdit_currentCharFormatChanged\0"
-    "QTextCharFormat\0format"
+    "QTextCharFormat\0format\0setPassword\0"
+    "on_actionConnect_to_DB_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,7 +90,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -95,26 +98,28 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  114,    2, 0x08 /* Private */,
-       3,    0,  115,    2, 0x08 /* Private */,
-       4,    0,  116,    2, 0x08 /* Private */,
-       5,    0,  117,    2, 0x08 /* Private */,
-       6,    1,  118,    2, 0x08 /* Private */,
-       8,    1,  121,    2, 0x08 /* Private */,
-       9,    1,  124,    2, 0x08 /* Private */,
-      10,    0,  127,    2, 0x08 /* Private */,
-      11,    0,  128,    2, 0x08 /* Private */,
-      12,    0,  129,    2, 0x08 /* Private */,
-      13,    0,  130,    2, 0x08 /* Private */,
-      14,    0,  131,    2, 0x08 /* Private */,
-      15,    0,  132,    2, 0x08 /* Private */,
-      16,    0,  133,    2, 0x08 /* Private */,
-      17,    0,  134,    2, 0x08 /* Private */,
-      18,    0,  135,    2, 0x08 /* Private */,
-      19,    0,  136,    2, 0x08 /* Private */,
-      20,    2,  137,    2, 0x08 /* Private */,
-      23,    0,  142,    2, 0x08 /* Private */,
-      24,    1,  143,    2, 0x08 /* Private */,
+       1,    0,  124,    2, 0x08 /* Private */,
+       3,    0,  125,    2, 0x08 /* Private */,
+       4,    0,  126,    2, 0x08 /* Private */,
+       5,    0,  127,    2, 0x08 /* Private */,
+       6,    1,  128,    2, 0x08 /* Private */,
+       8,    1,  131,    2, 0x08 /* Private */,
+       9,    1,  134,    2, 0x08 /* Private */,
+      10,    0,  137,    2, 0x08 /* Private */,
+      11,    0,  138,    2, 0x08 /* Private */,
+      12,    0,  139,    2, 0x08 /* Private */,
+      13,    0,  140,    2, 0x08 /* Private */,
+      14,    0,  141,    2, 0x08 /* Private */,
+      15,    0,  142,    2, 0x08 /* Private */,
+      16,    0,  143,    2, 0x08 /* Private */,
+      17,    0,  144,    2, 0x08 /* Private */,
+      18,    0,  145,    2, 0x08 /* Private */,
+      19,    0,  146,    2, 0x08 /* Private */,
+      20,    2,  147,    2, 0x08 /* Private */,
+      23,    0,  152,    2, 0x08 /* Private */,
+      24,    1,  153,    2, 0x08 /* Private */,
+      27,    0,  156,    2, 0x08 /* Private */,
+      28,    0,  157,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -137,6 +142,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::QString,   21,   22,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 25,   26,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -167,6 +174,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 17: _t->addValues((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 18: _t->on_actionClear_DB_triggered(); break;
         case 19: _t->on_textEdit_currentCharFormatChanged((*reinterpret_cast< const QTextCharFormat(*)>(_a[1]))); break;
+        case 20: _t->setPassword(); break;
+        case 21: _t->on_actionConnect_to_DB_triggered(); break;
         default: ;
         }
     }
@@ -201,13 +210,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 22)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 22;
     }
     return _id;
 }

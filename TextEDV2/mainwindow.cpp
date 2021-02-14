@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dbpassbox.h"
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
@@ -14,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->menubar->setStyleSheet("background-color:#3c3b37; color:white; text-decoration:underline");
 
-    createDB();
+    setPassword();
     this->setStyleSheet("QPushButton {background-color: white}; QComboBox {background-color: white};");
     bkgnd.load("./resources/background.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
@@ -38,6 +39,20 @@ void MainWindow::resizeEvent(QResizeEvent *evt)
     setPalette(p);
 
     QMainWindow::resizeEvent(evt);
+}
+
+void MainWindow::setPassword()
+{
+    dbPassBox passWindow(this);
+    passWindow.exec();
+    if(passWindow.ok){
+        dbPassword = passWindow.password;
+        createDB();
+    }else{
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error","Connection to data base is not established");
+        messageBox.setFixedSize(500,200);
+    }
 }
 
 void MainWindow::on_clearButton_clicked()
@@ -281,9 +296,8 @@ void MainWindow::addValues(int id, QString text)
 {
     QSqlQuery qry;
     // write inserting query
-    qry.prepare("INSERT INTO testtable (ID, TEXT) VALUES (:ID, :TEXT);");
+    qry.prepare("INSERT INTO textTable (ID, TEXT) VALUES (NULL, :TEXT);");
     // bind values to table values
-    qry.addBindValue(id);
     qry.addBindValue(text);
 
     if(!qry.exec())
@@ -299,25 +313,28 @@ void MainWindow::createDB(){
     dataBase = QSqlDatabase::addDatabase("QMYSQL");
     dataBase.setHostName("127.0.0.1");
     dataBase.setUserName("root");
-    dataBase.setPassword("11111111");
+    dataBase.setPassword(dbPassword);
 
     if(!dataBase.open()){
         qDebug()<<dataBase.lastError();
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error","Your password is wrong, please try again!");
+        messageBox.setFixedSize(500,200);
     }
     //dataBase.setDatabaseName("dbTest");
 
 
-    QSqlQuery qry(dataBase);
 
-    QSqlQuery query("CREATE DATABASE IF NOT EXISTS dbTest");
+    QSqlQuery query("CREATE DATABASE IF NOT EXISTS dbText");
     if (!query.exec()){
         qDebug()<<query.lastError();
     }
+    QSqlQuery qry(dataBase);
 
-    qry.prepare("USE dbTest;"
-                "CREATE TABLE testtable("
-                "ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
-                "TEXT VARCHAR);");
+    qry.prepare("USE dbText;"
+                "CREATE TABLE textTable("
+                "ID MEDIUMINT NOT NULL AUTO_INCREMENT,"
+                "TEXT VARCHAR(100));");
 
     if (!qry.exec()){
         qDebug()<<qry.lastError();
@@ -333,6 +350,8 @@ void MainWindow::on_actionStore_in_DB_triggered()
     if(cursor.hasSelection())
     {
         addValues(ID , cursor.selectedText());
+    }else{
+        addValues(ID, ui->textEdit->toPlainText());
     }
 }
 
@@ -340,7 +359,7 @@ void MainWindow::on_actionStore_in_DB_triggered()
 void MainWindow::on_actionClear_DB_triggered()
 {
     QSqlQuery query;
-    query.prepare("TRUNCATE dbTest.testtable");
+    query.prepare("TRUNCATE dbText.textTable");
     if(!query.exec()){
         qDebug() << query.lastError();
     }
@@ -369,4 +388,17 @@ void MainWindow::on_textEdit_currentCharFormatChanged(const QTextCharFormat &for
     ui->sizeComboBox->setCurrentText(size);
     ui->fontComboBox->setCurrentText(font);
     ui->colorComboBox->setCurrentText(currentColor);
+}
+
+void MainWindow::on_actionConnect_to_DB_triggered()
+{
+    if (dataBase.isValid())
+    {
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error","You have an open connection to your database!");
+        messageBox.setFixedSize(500,200);
+    }else
+    {
+        setPassword();
+    }
 }

@@ -337,6 +337,7 @@
     </property>
     <addaction name="actionStore_in_DB"/>
     <addaction name="actionClear_DB"/>
+    <addaction name="actionConnect_to_DB"/>
    </widget>
    <addaction name="menuHello"/>
    <addaction name="menuData_base"/>
@@ -420,6 +421,11 @@
   <action name="actionClear_DB3">
    <property name="text">
     <string>Clear DB</string>
+   </property>
+  </action>
+  <action name="actionConnect_to_DB">
+   <property name="text">
+    <string>Connect to DB</string>
    </property>
   </action>
  </widget>

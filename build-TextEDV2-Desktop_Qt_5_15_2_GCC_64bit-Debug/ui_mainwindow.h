@@ -38,6 +38,7 @@ public:
     QAction *actionStore_in_DB;
     QAction *actionClear_DB;
     QAction *actionClear_DB3;
+    QAction *actionConnect_to_DB;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QWidget *widget;
@@ -98,6 +99,8 @@ public:
         actionClear_DB->setObjectName(QString::fromUtf8("actionClear_DB"));
         actionClear_DB3 = new QAction(MainWindow);
         actionClear_DB3->setObjectName(QString::fromUtf8("actionClear_DB3"));
+        actionConnect_to_DB = new QAction(MainWindow);
+        actionConnect_to_DB->setObjectName(QString::fromUtf8("actionConnect_to_DB"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -271,6 +274,7 @@ public:
         menuHello->addAction(actionExit);
         menuData_base->addAction(actionStore_in_DB);
         menuData_base->addAction(actionClear_DB);
+        menuData_base->addAction(actionConnect_to_DB);
 
         retranslateUi(MainWindow);
 
@@ -304,6 +308,7 @@ public:
         actionStore_in_DB->setText(QCoreApplication::translate("MainWindow", "Store in DB", nullptr));
         actionClear_DB->setText(QCoreApplication::translate("MainWindow", "Clear DB", nullptr));
         actionClear_DB3->setText(QCoreApplication::translate("MainWindow", "Clear DB", nullptr));
+        actionConnect_to_DB->setText(QCoreApplication::translate("MainWindow", "Connect to DB", nullptr));
         rightAlignmentButton->setText(QString());
         colorComboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Color", nullptr));
         colorComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Black", nullptr));

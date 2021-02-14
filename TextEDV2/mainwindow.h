@@ -20,6 +20,7 @@ public:
     int ID;
     QPixmap bkgnd;
     QSqlDatabase dataBase;
+    QString dbPassword;
 
 private slots:
     void on_clearButton_clicked();
@@ -63,6 +64,10 @@ private slots:
 
     void on_textEdit_currentCharFormatChanged(const QTextCharFormat &format);
 
+    void setPassword();
+
+
+    void on_actionConnect_to_DB_triggered();
 
 private:
     Ui::MainWindow *ui;
