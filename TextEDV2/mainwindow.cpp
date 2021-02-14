@@ -294,17 +294,23 @@ void MainWindow::on_actionSave_as_triggered()
 
 void MainWindow::addValues(int id, QString text)
 {
-    QSqlQuery qry;
-    // write inserting query
-    qry.prepare("INSERT INTO textTable (ID, TEXT) VALUES (NULL, :TEXT);");
-    // bind values to table values
-    qry.addBindValue(text);
-
-    if(!qry.exec())
+    if(dataBase.isValid())
     {
-        qDebug()<<qry.lastError();
+        QSqlQuery qry;
+        // write inserting query
+        qry.prepare("INSERT INTO textTable (ID, TEXT) VALUES (NULL, :TEXT);");
+        // bind values to table values
+        qry.addBindValue(text);
+
+        if(!qry.exec())
+        {
+            qDebug()<<qry.lastError();
+        }
+    }else{
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error","You are not connected to database!");
+        messageBox.setFixedSize(500,200);
     }
-    ID++;
 }
 
 void MainWindow::createDB(){
@@ -358,10 +364,17 @@ void MainWindow::on_actionStore_in_DB_triggered()
 
 void MainWindow::on_actionClear_DB_triggered()
 {
-    QSqlQuery query;
-    query.prepare("TRUNCATE dbText.textTable");
-    if(!query.exec()){
-        qDebug() << query.lastError();
+    if(dataBase.isValid())
+    {
+        QSqlQuery query;
+        query.prepare("TRUNCATE dbText.textTable");
+        if(!query.exec()){
+            qDebug() << query.lastError();
+        }
+    }else{
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error","You are not connected to database!");
+        messageBox.setFixedSize(500,200);
     }
 }
 
