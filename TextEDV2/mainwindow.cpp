@@ -298,7 +298,7 @@ void MainWindow::addValues(int id, QString text)
     {
         QSqlQuery qry;
         // write inserting query
-        qry.prepare("INSERT INTO textTable (ID, TEXT) VALUES (NULL, :TEXT);");
+        qry.prepare("INSERT INTO txTable (TEXT) VALUES (:TEXT);");
         // bind values to table values
         qry.addBindValue(text);
 
@@ -338,9 +338,10 @@ void MainWindow::createDB(){
     QSqlQuery qry(dataBase);
 
     qry.prepare("USE dbText;"
-                "CREATE TABLE textTable("
+                "CREATE TABLE txTable("
                 "ID MEDIUMINT NOT NULL AUTO_INCREMENT,"
-                "TEXT VARCHAR(100));");
+                "TEXT VARCHAR(100),"
+                "PRIMARY KEY (ID));");
 
     if (!qry.exec()){
         qDebug()<<qry.lastError();
@@ -367,7 +368,7 @@ void MainWindow::on_actionClear_DB_triggered()
     if(dataBase.isValid())
     {
         QSqlQuery query;
-        query.prepare("TRUNCATE dbText.textTable");
+        query.prepare("TRUNCATE dbText.txTable");
         if(!query.exec()){
             qDebug() << query.lastError();
         }
